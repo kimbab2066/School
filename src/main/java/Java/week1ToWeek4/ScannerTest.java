@@ -51,7 +51,7 @@ public class ScannerTest {
 		if (min > num3) {
 			min = num3;
 		}
-//		max = num1 > num2 ? num1 > num3 ? num1 : num3 : num2 > num3 ? num2 : num3;
+		max = num1 > num2 ? num1 > num3 ? num1 : num3 : num2 > num3 ? num2 : num3;
 		System.out.println("최대값:" + max + " 최소값: " + min);
 	}// end of main
 
