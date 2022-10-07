@@ -19,7 +19,7 @@ public class whileTest {
 //		multiplicationTable(dan);
 
 //		multipTable();
-//		multipTable2();
+		multipTable2();
 		// 1~10까지 합계
 //		System.out.println(sumOneToTen());
 //		System.out.print("숫자 입력:");
@@ -32,11 +32,11 @@ public class whileTest {
 //		} while (mon < 1 || mon > 12);
 //		System.out.println("사용자가 입력한 월은 " + mon);
 		// 최대 공약수 찾기
-		System.out.print("두 개의 정수를 입력하시오. : ");
-		int a = in.nextInt();
-		int b = in.nextInt();
-		int result = gcd(a, b);
-		System.out.println("최대 공약수는 " + result);
+//		System.out.print("두 개의 정수를 입력하시오. : ");
+//		int a = in.nextInt();
+//		int b = in.nextInt();
+//		int result = gcd(a, b);
+//		System.out.println("최대 공약수는 " + result);
 	}// end of main
 
 	static int gcd(int a, int b) {
@@ -49,7 +49,8 @@ public class whileTest {
 	}
 
 	static int gcd2(int a, int b) {
-		if (b == 0) return a;
+		if (b == 0)
+			return a;
 		return gcd2(b, a % b);
 	}
 
