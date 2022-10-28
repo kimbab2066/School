@@ -5,22 +5,23 @@ import java.util.Scanner;
 
 public class Test01 {
 	static int userCnt, comCnt;
+	static Random rnd;
 
 	public static void main(String[] args) {
 		Scanner in = new Scanner(System.in);
 		// 1. 사용자 선택 1가위 2바위 3보를 선택하여 컴퓨터와 승리를 가린다.
 		// 2. 5판을 반복하여 스코어를 나타내고 승리자를 출력해준다
-		while (userCnt < 3 && comCnt < 3) {
+		do {
 			System.out.print("사용자 선택[1:가위,2:바위,3:보]:");
 			int user = in.nextInt();
 			rps(user);
-		}
+		} while (userCnt < 3 && comCnt < 3);
 		String result = userCnt > comCnt ? "사용자" : "컴퓨터";
 		System.out.printf("***%s의 승리로 게임이 종료되었습니다.***", result);
 	}// end of main
 
 	static void rps(int user) {
-		Random rnd = new Random();
+		rnd = new Random();
 		int com = rnd.nextInt(3) + 1;
 		System.out.printf("-컴:%d\n-사용자:%d\n", com, user);
 		// com % 3 == (user+1)%3
