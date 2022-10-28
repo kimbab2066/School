@@ -3,7 +3,7 @@ package Java.week9;
 import java.util.Random;
 import java.util.Scanner;
 
-public class Test02 {
+public class 가위바위보2 {
 	static int userCnt, comCnt;
 	static Random rnd = new Random();
 
