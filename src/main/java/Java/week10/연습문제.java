@@ -1,12 +1,13 @@
 package Java.week10;
 
+import java.util.Arrays;
 import java.util.Random;
 
 public class 연습문제 {
 	public static void main(String[] args) {
 //		test1();
-		test2();
-//		test3();
+//		test2();
+		test3();
 	}// end of main
 
 	static void test1() {
@@ -53,18 +54,18 @@ public class 연습문제 {
 		// 가장 큰 값을 찾는다
 		// loop를 돈다
 		// 값을 0으로 바꿔준다
-		int idx = -1, cnt = 0;
+		int cnt = 0;
 		while (cnt != 6) {
+			int max = arr[1];
+			int idx = 1;
 			for (int i = 2; i <= 6; i++) {
-				int val = 0;
-				val = Math.max(arr[1], arr[i]);
-				for (int k = 1; k <= 6; k++) {
-					if (val == arr[k]) {
-						idx = k;
-					}
+				if (max <= arr[i]) {
+					max = arr[i];
+					idx = i;
 				}
 			}
-			for (int i = 0; i < arr[idx]; i++) {
+			System.out.printf("%d(%d):", idx, max);
+			for (int j = 0; j < arr[idx]; j++) {
 				System.out.print("*");
 			}
 			System.out.println();
