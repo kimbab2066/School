@@ -6,8 +6,33 @@ import java.util.Scanner;
 
 public class 과제4장 {
 	public static void main(String[] args) {
-		test21();
+//		test20();
+		test20_2();
+//		test21_2();
 	}// end of main
+
+	static void test20_2() {
+		Scanner in = new Scanner(System.in);
+		System.out.print("학생의 수를 입력하시오:");
+		final int STUDENT = in.nextInt();
+		int[] score = new int[STUDENT];
+		for (int i = 0; i < STUDENT; i++) {
+			System.out.printf("학생%d의 성적을 입력하시오:", i + 1);
+			score[i] = in.nextInt();
+			if (!(0 <= score[i] & score[i] <= 100)) {
+				System.out.println("잘못된 성적입니다. 다시 입력하시오.");
+				i--;
+			}
+		}
+		double sum = 0;
+		for (double val : score)
+			sum += val;
+		System.out.printf("성적 평균은 %.1f입니다.", sum / STUDENT);
+	}// end of test20_2
+
+	static void test21_2() {
+
+	}
 
 	static void test01() {
 		int[] n1;
@@ -184,18 +209,14 @@ public class 과제4장 {
 
 		for (int i = 0; i < STUDENT; i++) {
 			System.out.printf("학생 %d의 성적을 입력하시오:", i + 1);
-			int score = in.nextInt();
-			while (0 < score && score > 100) {
+			arr[i] = in.nextInt();
+			if (!(0 <= arr[i] & arr[i] <= 100)) {
 				System.out.println("잘못된 성적입니다. 다시입력하시오.");
-				System.out.printf("학생 %d의 성적을 입력하시오:", i + 1);
-				score = in.nextInt();
+				i--;
 			}
-			arr[i] = score;
 		}
 		double sum = 0;
-		for (int val : arr) {
-			sum += val;
-		}
+		for (int val : arr) sum += val;
 		System.out.printf("성적 평균은 %.1f입니다.", sum / STUDENT);
 	}// end of test20
 
