@@ -7,8 +7,8 @@ import java.util.Scanner;
 public class 과제4장 {
 	public static void main(String[] args) {
 //		test20();
-		test20_2();
-//		test21_2();
+//		test20_2();
+		test21_2();
 	}// end of main
 
 	static void test20_2() {
@@ -31,8 +31,22 @@ public class 과제4장 {
 	}// end of test20_2
 
 	static void test21_2() {
-
-	}
+		String[] hexa2bin = { "0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010",
+				"1011", "1100", "1101", "1110", "1111" };
+		Scanner in = new Scanner(System.in);
+		System.out.print("16진수 문자열을 입력하시오:");
+		String str = in.next();
+		String result = "";
+		for (int i = 0; i < str.length(); i++) {
+			char ch = str.charAt(i);
+			if ('0' <= ch && ch <= '9') ch -= '0';
+			else if ('a' <= ch && ch <= 'z') ch -= 87;
+			else if ('A' <= ch && ch <= 'F') ch -= 55;
+			result += hexa2bin[ch];
+			if (i < str.length() - 1) result += " ";
+		}
+		System.out.printf("\"%s\"에 대한 이진수는 %s입니다.", str, result);
+	}// end of test21_2
 
 	static void test01() {
 		int[] n1;
@@ -216,7 +230,8 @@ public class 과제4장 {
 			}
 		}
 		double sum = 0;
-		for (int val : arr) sum += val;
+		for (int val : arr)
+			sum += val;
 		System.out.printf("성적 평균은 %.1f입니다.", sum / STUDENT);
 	}// end of test20
 
@@ -227,19 +242,15 @@ public class 과제4장 {
 		Scanner in = new Scanner(System.in);
 		System.out.print("16진수 문자열을 입력하시오:");
 		String str = in.next();
-		System.out.printf("%s에 대한 이진수는 ", str);
+		String result = "";
 		for (int i = 0; i < str.length(); i++) {
 			char ch = str.charAt(i);
-			if (97 <= ch && ch <= 102) {
-				ch -= 87;
-				System.out.print(hexa2bin[ch] + " ");
-			} else if (65 <= ch && ch <= 70) {
-				ch -= 55;
-				System.out.print(hexa2bin[ch] + " ");
-			} else {
-				System.out.print(hexa2bin[ch - '0'] + " ");
-			}
+			if ('0' <= ch && ch <= '9') ch -= '0';
+			else if ('a' <= ch && ch <= 'z') ch -= 87;
+			else if ('A' <= ch && ch <= 'F') ch -= 55;
+			result += hexa2bin[ch];
+			if (i < str.length() - 1) result += " ";
 		}
-		System.out.print("입니다.");
+		System.out.printf("\"%s\"에 대한 이진수는 %s입니다.", str, result);
 	}// end of test21
 }// end of class
