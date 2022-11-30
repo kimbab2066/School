@@ -6,9 +6,9 @@ import java.util.Scanner;
 
 public class 과제4장 {
 	public static void main(String[] args) {
-//		test20();
+		test21();
 //		test20_2();
-		test21_2();
+//		test21_2();
 	}// end of main
 
 	static void test20_2() {
@@ -237,8 +237,8 @@ public class 과제4장 {
 
 	// 63 - 51 =12
 	static void test21() {
-		String[] hexa2bin = { "0000", "0001", "0010", "0011", "0100", "0101", "0110", "0111", "1000", "1001", "1010",
-				"1011", "1100", "1101", "1110", "1111" };
+		String[] hexa2bin = { "0000", "0001", "0010", "0011", "0100", "0101", "0110", 
+				"0111", "1000", "1001", "1010","1011", "1100", "1101", "1110", "1111" };
 		Scanner in = new Scanner(System.in);
 		System.out.print("16진수 문자열을 입력하시오:");
 		String str = in.next();
