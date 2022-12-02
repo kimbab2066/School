@@ -5,6 +5,7 @@ public class Tel {
 	private int volume;
 	private boolean onOff;
 
+
 	public void volumeUp() {
 		this.volume++;
 	}
