@@ -143,7 +143,7 @@ public class PracticeProblem {
 		if (str.length() % n != 0) len++;
 		String[] arr = new String[len];
 		for (int i = 0; i < arr.length; i++) {
-			if (str.length() < n + 1) {
+			if (str.length() < n) {
 				arr[i] = str.substring(0);
 				break;
 			}
@@ -151,11 +151,14 @@ public class PracticeProblem {
 			arr[i] = str.substring(0, n);
 			str = str.substring(n);
 		}
-		System.out.print("분리된 문자열:[");
-		for (int i = 0; i < arr.length; i++) {
-			System.out.printf("\"%s\"", arr[i]);
-			if (i < arr.length - 1) System.out.print(", ");
-		}
-		System.out.print("]");
+		//ceilDiv
+		System.out.print("분리된 문자열:");
+		System.out.println(Arrays.toString(arr));
+//		System.out.print("분리된 문자열:[");
+//		for (int i = 0; i < arr.length; i++) {
+//			System.out.printf("\"%s\"", arr[i]);
+//			if (i < arr.length - 1) System.out.print(", ");
+//		}
+//		System.out.print("]");
 	}// test4
 }// class
